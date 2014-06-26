@@ -1,0 +1,39 @@
+<%= form_for @location, :url => user_locations_path(@user) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
+
+      <ul>
+      <% @location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>`
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :loc %><br>
+    <%= f.text_field :loc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date, 'data-behaviour' => 'datepicker' %>
+
+  <script type="text/javascript">
+    $('[data-behaviour~=datepicker]').datepicker();
+  </script>
+  </div>
+
+  <div class="field">
+    <%= f.label :journal %><br>
+    <%= f.text_field :journal, :cols => "30", :rows => "10"%>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

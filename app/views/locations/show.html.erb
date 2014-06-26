@@ -1,0 +1,21 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Loc:</strong>
+  <%= @location.loc %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @location.date %>
+</p>
+
+<p>
+  <strong>Journal:</strong>
+  <%= @location.journal %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
